@@ -42,9 +42,9 @@ export default function Login(props) {
     return (
         <div className='login'>
             <Card >
-                <h1>Log in</h1>
+                <h1 className='cardHeader'>Log in</h1>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Field>
+                    <Form.Field className='inputField'>
                         <label>Name</label>
                         <input 
                             type='text' 
@@ -54,7 +54,7 @@ export default function Login(props) {
                             onChange={handleChange}
                         />
                     </Form.Field>
-                    <Form.Field>
+                    <Form.Field className='inputField'>
                         <label>Password</label>
                         <input 
                             placeholder="Password" 
@@ -65,13 +65,13 @@ export default function Login(props) {
                         />
                     </Form.Field>
                     <br />
-                    <Button type='submit'>Submit</Button>
+                    <Button fluid color='black' type='submit'>Submit</Button>
                 </Form>
             </Card>
             <div>
                 <Switch>
                     <Link to='/signup'>
-                        <Button color='blue'>Create an Account</Button>
+                        <Button fluid color='blue'>Create an Account</Button>
                     </Link>
                 </Switch>
             </div>

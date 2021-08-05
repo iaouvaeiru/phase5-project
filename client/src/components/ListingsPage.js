@@ -16,11 +16,6 @@ export default function ListingsPage(props) {
 
     return (
         <div>
-            <Switch>
-                <Link to={"/newlisting"}>
-                    <button>New Listing</button>
-                </Link>
-            </Switch>
             {renderListings}
         </div>
     )

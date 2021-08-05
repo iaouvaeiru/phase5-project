@@ -41,14 +41,15 @@ export default function NewListing(props) {
         })
         .then(res => res.json())
         .then(newItem => props.addToItem(newItem))
+        .then(() => props.history.push('/profile/listings'))
     }
 
     return (
-        <div>
-            <Card>
-            <h1>Create a Listing</h1>
+        <div className='createListing'>
+            <Card fluid>
+            <h1 className='cardHeader'>Create a Listing</h1>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Field>
+                    <Form.Field className='inputField'>
                         <label>Name</label>
                         <input 
                             type='text' 
@@ -58,38 +59,37 @@ export default function NewListing(props) {
                             onChange={handleChange}
                         />
                     </Form.Field>
-                    <Form.Field>
+                    <Form.Field className='inputField'>
                         <label>Image</label>
                         <input 
-                            placeholder="image" 
+                            placeholder="Image url" 
                             name='image' 
                             type='text' 
                             value={formData.image} 
                             onChange={handleChange}
                         />
                     </Form.Field>
-                    <Form.Field>
+                    <Form.Field className='inputField'>
                         <label>Price</label>
                         <input 
-                            placeholder="price" 
+                            placeholder = '0' 
                             name='price' 
                             type='number' 
                             value={formData.price} 
                             onChange={handleChange}
                         />
                     </Form.Field>
-                    <Form.Field>
-                        <label>Description</label>
-                        <input 
-                            placeholder="description" 
-                            name='description' 
-                            type='text' 
-                            value={formData.description} 
-                            onChange={handleChange}
-                        />
-                    </Form.Field>
+                    <Form.TextArea
+                        className='inputField'
+                        label='Description' 
+                        name='description' 
+                        type='text'  
+                        placeholder="Description..." 
+                        onChange={handleChange} 
+                        value={formData.description} >
+                    </Form.TextArea>
                     <br />
-                    <Button type='submit'>Submit</Button>
+                    <Button fluid color='black' type='submit'>Submit</Button>
                 </Form>
             </Card>
         </div>

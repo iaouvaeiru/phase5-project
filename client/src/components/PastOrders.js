@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+
 
 export default function PastOrders(props) {
     return (
@@ -6,8 +8,7 @@ export default function PastOrders(props) {
             <hr></hr>
             <h2>{props.orderObj.item.name}</h2>
             <h4>${props.orderObj.bid}</h4>
-            <h4>status: {props.orderObj.accepted ? 'accepted' : 'unaccepted'}</h4>
-            <br></br>
+            <h4>status: {props.orderObj.accepted}</h4>
             <hr></hr>
         </div>
     )

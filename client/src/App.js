@@ -65,12 +65,33 @@ function App(props) {
     })
   }
 
+  const clearOrder = deletedID => {
+    let copyOfOrders = state.orders.filter(orderObj => {
+      return orderObj.id !== deletedID
+    })
+    setState({
+      ...state,
+      orders: copyOfOrders
+    })
+  }
+
+  const acceptAndClear = orderItemID => {
+    let copyOfOrders = state.orders.filter(orderObj => {
+      return orderObj.item.id !== orderItemID
+    })
+    setState({
+      ...state,
+      orders: copyOfOrders
+    })
+  }
+
 
   console.log(state)
   console.log(items)
   return (
     <div>
       <NavBar />
+      <br></br>
       <Switch>
         <Route path={'/login'}
           render={routerProps => {
@@ -109,6 +130,8 @@ function App(props) {
               <Profile
                 {...routerProps}
                 deleteItem={deleteItem}
+                clearOrder={clearOrder}
+                acceptAndClear={acceptAndClear}
                 state={state}
                 items={items}>
               </Profile>
@@ -126,6 +149,9 @@ function App(props) {
               </NewListing>
             </div>
           }}>
+        </Route>
+        <Route path={'/'} >
+
         </Route>
       </Switch>
     </div>

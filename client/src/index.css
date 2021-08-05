@@ -11,3 +11,47 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.listingCard {
+  display: grid;
+  grid-template-columns: 35% 60%;
+  border-color: aquamarine;
+  border-width: 5px;
+}
+
+.listingCard > div {
+  padding: 4em
+}
+
+.login {
+  position: absolute;
+    top: 20%;
+    left: 40%;
+}
+
+.createListing {
+  position: relative;
+  top: 10%;
+  margin: auto;
+  width: 50%
+}
+
+.createListing Form Form.Field {
+  padding: 0;
+  margin: 0
+}
+
+.nav {
+  background-color: black;
+  color: white;
+  padding: .5em
+}
+
+.cardHeader {
+  padding: .5em
+}
+
+.inputField {
+  padding: 1em
+}
+

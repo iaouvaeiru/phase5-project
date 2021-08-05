@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'semantic-ui-react'
 
 export default function SelfListingCard(props) {
     let handleClick = (e) => {
@@ -10,13 +11,18 @@ export default function SelfListingCard(props) {
     }
 
     return (
-        <div>
-            <h1>{props.itemObj.name}</h1>
-            <img src={props.itemObj.image} style={{width: 300}}/>
-            <p>${props.itemObj.price}</p>
-            <p>{props.itemObj.description}</p>
-            <p>{props.itemObj.sold ? 'sold' : "available for purchase"}</p>
-            <button onClick={handleClick}>Delete</button>
+        <div className='listingCard'>
+            <div>
+                <img src={props.itemObj.image} alt={props.itemObj.name} style={{width: 300}}/>
+            </div>
+            <div>
+                <br></br>
+                <h1>{props.itemObj.name}</h1>
+                <p>Asking price: ${props.itemObj.price}</p>
+                <p>Description: {props.itemObj.description}</p>
+                <p>Status: {props.itemObj.sold ? 'sold' : "available for purchase"}</p>
+                <Button basic color='red' compact onClick={handleClick}>Delete</Button>
+            </div>
         </div>
     )
 }

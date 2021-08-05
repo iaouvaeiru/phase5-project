@@ -5,6 +5,24 @@ class OrdersController < ApplicationController
         render json: order
     end
 
+    def reject
+        order = Order.find_by(id: params[:id])
+        order.update(:accepted => 'rejected')
+        render json: order
+    end
+
+    def accept
+        order = Order.find_by(id: params[:id])
+        order.item.orders.map{|order| 
+            if order.id == params[:id]
+                order.update(:accepted => 'accepted')
+                render json: order
+            else
+                order.update(:accepted => 'rejected')
+            end
+        }
+        order.item.update(:sold => true)
+    end
 
     private
 

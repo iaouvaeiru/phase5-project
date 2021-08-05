@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.belongs_to :item, null: false, foreign_key: true
       t.belongs_to :user, null: false, foreign_key: true
       t.integer :bid
-      t.boolean :accepted
+      t.string :accepted
 
       t.timestamps
     end

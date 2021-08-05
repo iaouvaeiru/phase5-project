@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_191502) do
     t.bigint "item_id", null: false
     t.bigint "user_id", null: false
     t.integer "bid"
-    t.boolean "accepted"
+    t.string "accepted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_orders_on_item_id"

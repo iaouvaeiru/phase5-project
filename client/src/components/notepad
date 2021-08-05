@@ -1,0 +1,6 @@
+    let selfBids = (routerProps) => props.state.ordersIMade.map(orderObj => {
+        return <PastOrders 
+                    key = {orderObj.id}
+                    orderObj = {orderObj}
+                    />
+    })
