@@ -67,16 +67,16 @@ export default function Profile(props) {
                     <Link to={"/newlisting"}>
                         <Button basic style={{ marginRight: '50px', marginLeft: '30px' }}>New Listing</Button>
                     </Link>
-                    <h1>your listings:</h1>
+                    <h1 className='profile'>Your listings:</h1>
                     {selfListings()}
                 </Route>
                 <Route path={'/profile/offers'}>
-                    <h1>Offers</h1>
+                    <h1 className='profile'>Offers:</h1>
                     {offers()}
                 </Route>
                 <Route path={'/profile/orders'}>
-                    <h1>My Bids:</h1>
-                    <Checkbox label="Show only accepted bids" onClick={handleClick}></Checkbox>
+                    <h1 className='profile'>My Bids:</h1>
+                    <Checkbox className='checkbox' label="Show only accepted bids" onClick={handleClick}></Checkbox>
                     {state ? filteredBids() : selfBids()}
                 </Route>
             </Switch>

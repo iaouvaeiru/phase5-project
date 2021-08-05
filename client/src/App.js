@@ -6,6 +6,7 @@ import Profile from './components/Profile'
 import NewListing from './components/NewListing'
 import {Switch, Route, withRouter} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
+import pendingvending from './pendingvending.png'
 
 function App(props) {
 
@@ -25,6 +26,18 @@ function App(props) {
     .then(res => res.json())
     .then(itemsArr => setItems(itemsArr))
   },[])
+
+  useEffect(() => {
+    if(localStorage.token){
+      fetch('/me', {
+        headers: {
+          'authorization': localStorage.token
+        }
+      })
+      .then(res => res.json())
+      .then(handleResponse)
+    }
+  }, [])
 
   let handleResponse = (resp) => {
     console.log(resp)
@@ -90,8 +103,11 @@ function App(props) {
   console.log(items)
   return (
     <div>
-      <NavBar />
-      <br></br>
+      <NavBar 
+        state = {state}
+        setState = {setState}
+      />
+        <br></br>
       <Switch>
         <Route path={'/login'}
           render={routerProps => {
@@ -151,7 +167,7 @@ function App(props) {
           }}>
         </Route>
         <Route path={'/'} >
-
+          <img className='logo' src={pendingvending} alt='logo' />
         </Route>
       </Switch>
     </div>

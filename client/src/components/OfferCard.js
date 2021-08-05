@@ -36,7 +36,7 @@ export default function OfferCard(props) {
     }
     
     return (
-        <div>
+        <div className='offer'>
             <h3>{props.orderObj.item.name}</h3>
             <p>bid: {props.orderObj.bid}</p>
             <Button compact basic color='green'onClick={handleAccept}>accept</Button> <Button compact basic color='red'onClick={handleReject}>decline</Button>

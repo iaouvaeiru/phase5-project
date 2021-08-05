@@ -55,3 +55,30 @@ code {
   padding: 1em
 }
 
+.bid h2{
+  padding-left: 1em;
+  padding-top: 0px;
+  margin: auto;
+}
+
+.bid h4{
+  padding-left: 2em;
+  margin: auto
+}
+
+.profile {
+  padding-left: 1em
+}
+
+.checkbox {
+  padding-left: 2em;
+}
+
+.offer {
+  padding-left: 3em;
+}
+
+.logo {
+  object-fit: cover;
+  width: 100%;
+}
