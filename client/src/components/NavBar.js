@@ -16,6 +16,7 @@ export default function NavBar(props) {
             orders: [],
             ordersIMade: []
         })
+        localStorage.clear()
     }
 
     const Logout = () => {
